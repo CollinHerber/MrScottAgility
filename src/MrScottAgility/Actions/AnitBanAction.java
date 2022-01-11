@@ -1,5 +1,6 @@
 package MrScottAgility.Actions;
 import org.dreambot.api.input.Mouse;
+import org.dreambot.api.methods.Calculations;
 import org.dreambot.api.methods.MethodProvider;
 import org.dreambot.api.methods.dialogues.Dialogues;
 import org.dreambot.api.methods.skills.Skill;
@@ -37,6 +38,17 @@ public class AnitBanAction {
             Dialogues.clickContinue();
         }
     }
+
+    public static void maybeMoveMouseOutsideScreen(){
+        Random random = new Random();
+        if(random.nextInt(Calculations.random(3, 20)) == 0) {
+            if(random.nextInt(Calculations.random(2, 10)) == 0) {
+                Mouse.moveMouseOutsideScreen();
+            }
+            MethodProvider.sleep(1000, 20000);
+        }
+    }
+
     private static Skill ChoseRandomSkill(){
         Skill[] Skills = new Skill[]{
                 Skill.WOODCUTTING,

@@ -14,7 +14,7 @@ public class VarrockRooftopSolver {
         solveFifthStep();
         solveSixthStep();
         solveSeventhStep();
-        solveEigthStep();
+        solveEighthStep();
         solveNinthStep();
     }
 
@@ -55,7 +55,7 @@ public class VarrockRooftopSolver {
         MethodProvider.sleep(987, 3100);
     }
 
-    private static void solveEigthStep() {
+    private static void solveEighthStep() {
         RooftopAgilityActions.HurdleLedge();
         waitForPeriod(4000);
     }
@@ -67,6 +67,7 @@ public class VarrockRooftopSolver {
 
     private static void waitForPeriod(int timeout) {
         sleepUntil(() -> !Players.localPlayer().isAnimating(), timeout);
+        AnitBanAction.maybeMoveMouseOutsideScreen();
         MethodProvider.sleep(250, 1000);
     }
 }
