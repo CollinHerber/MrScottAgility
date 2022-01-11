@@ -41,28 +41,28 @@ public class VarrockRooftopSolver {
 
     private static void solveFifthStep() {
         RooftopAgilityActions.LeapGap();
-        waitForPeriod(5000);
+        waitForPeriod(3000);
     }
 
     private static void solveSixthStep() {
         RooftopAgilityActions.LeapGap(14834);
-        waitForPeriod(5000);
+        waitForPeriod(4000);
     }
 
     private static void solveSeventhStep() {
         RooftopAgilityActions.LeapGap(14835);
-        waitForPeriod(5000);
-        MethodProvider.sleep(1987, 3500);
+        waitForPeriod(4000);
+        MethodProvider.sleep(987, 3100);
     }
 
     private static void solveEigthStep() {
         RooftopAgilityActions.HurdleLedge();
-        waitForPeriod(5000);
+        waitForPeriod(4000);
     }
 
     private static void solveNinthStep() {
         RooftopAgilityActions.JumpOffEdge();
-        waitForPeriod(5000);
+        waitForPeriod(4000);
     }
 
     private static void waitForPeriod(int timeout) {
