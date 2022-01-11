@@ -50,13 +50,11 @@ public class RooftopAgilityActions {
     }
 
     private static void HandleObstacle(String objName, String interactOption) {
-        GameObject obj = GameObjects.closest(objName);
-        DoObstacle(obj, interactOption);
+        DoObstacle(GetObstacle(objName), interactOption);
     }
 
     private static void HandleObstacle(int objectId, String interactOption) {
-        GameObject obj = GameObjects.closest(objectId);
-        DoObstacle(obj, interactOption);
+        DoObstacle(GetObstacle(objectId), interactOption);
     }
 
     private static void DoObstacle(GameObject obj, String interactOption) {
@@ -76,6 +74,7 @@ public class RooftopAgilityActions {
     private static void WalkCheck(GameObject obj) {
         if (Players.localPlayer().getTile().distance(obj.getTile()) > 20) {
             WalkAction.walkToArea(obj.getSurroundingArea(2));
+            sleepUntil(() -> obj.getSurroundingArea(3).contains(Players.localPlayer().getTile()), 5000);
         }
     }
 
