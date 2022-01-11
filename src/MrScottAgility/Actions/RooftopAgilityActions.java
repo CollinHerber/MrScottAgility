@@ -3,7 +3,9 @@ package MrScottAgility.Actions;
 import org.dreambot.api.methods.MethodProvider;
 import org.dreambot.api.methods.interactive.GameObjects;
 import org.dreambot.api.methods.interactive.Players;
+import org.dreambot.api.methods.item.GroundItems;
 import org.dreambot.api.wrappers.interactive.GameObject;
+import org.dreambot.api.wrappers.items.GroundItem;
 
 import static org.dreambot.api.methods.MethodProvider.log;
 import static org.dreambot.api.methods.MethodProvider.sleepUntil;
@@ -79,7 +81,7 @@ public class RooftopAgilityActions {
     }
 
     private static void GrabMarkOfGrace() {
-        GameObject obj = GameObjects.closest("Mark of grace");
+        GroundItem obj = GroundItems.closest("Mark of grace");
         if (obj != null) {
             obj.interact("Take");
             MethodProvider.sleep(250, 1000);
