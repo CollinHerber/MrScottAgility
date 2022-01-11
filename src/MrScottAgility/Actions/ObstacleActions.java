@@ -10,37 +10,10 @@ import org.dreambot.api.wrappers.items.GroundItem;
 import static org.dreambot.api.methods.MethodProvider.log;
 import static org.dreambot.api.methods.MethodProvider.sleepUntil;
 
-public class RooftopAgilityActions {
+public class ObstacleActions {
     private static void PreObstacleChecks(GameObject obj) {
         GrabMarkOfGrace();
         WalkCheck(obj);
-    }
-    public static void LeapGap() {
-        HandleObstacle("Gap", "leap");
-    }
-
-    public static void LeapGap(int objectId) {
-        HandleObstacle(objectId, "leap");
-    }
-
-    public static void BalanceWall() {
-        HandleObstacle("Wall", "Balance");
-    }
-
-    public static void CrossClothesLines() {
-        HandleObstacle("Clothes Line", "cross");
-    }
-
-    public static void HurdleLedge() {
-        HandleObstacle("Ledge", "hurdle");
-    }
-
-    public static void JumpOffEdge() {
-        HandleObstacle("Edge", "jump-off");
-    }
-
-    public static void ClimbRoughWall() {
-        HandleObstacle("Rough Wall", "Climb");
     }
 
     private static GameObject GetObstacle(String objName) {
@@ -51,11 +24,11 @@ public class RooftopAgilityActions {
         return GameObjects.closest(objId);
     }
 
-    private static void HandleObstacle(String objName, String interactOption) {
+    public static void HandleObstacle(String objName, String interactOption) {
         DoObstacle(GetObstacle(objName), interactOption);
     }
 
-    private static void HandleObstacle(int objectId, String interactOption) {
+    public static void HandleObstacle(int objectId, String interactOption) {
         DoObstacle(GetObstacle(objectId), interactOption);
     }
 

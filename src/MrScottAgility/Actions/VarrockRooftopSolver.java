@@ -19,49 +19,49 @@ public class VarrockRooftopSolver {
     }
 
     private static void solveFirstStep() {
-        RooftopAgilityActions.ClimbRoughWall();
+        ObstacleActions.HandleObstacle("Rough Wall", "Climb");
         waitForPeriod(1500);
     }
 
     private static void solveSecondStep() {
-        RooftopAgilityActions.CrossClothesLines();
+        ObstacleActions.HandleObstacle("Clothes Line", "cross");
         waitForPeriod(3500);
     }
 
     private static void solveThirdStep() {
-        RooftopAgilityActions.LeapGap();
+        ObstacleActions.HandleObstacle("Gap", "leap");
         waitForPeriod(2680);
     }
 
     private static void solveFourthStep() {
-        RooftopAgilityActions.BalanceWall();
+        ObstacleActions.HandleObstacle("Wall", "Balance");
         waitForPeriod(15000);
         MethodProvider.sleep(1987, 3500);
     }
 
     private static void solveFifthStep() {
-        RooftopAgilityActions.LeapGap();
+        ObstacleActions.HandleObstacle("Gap", "leap");
         waitForPeriod(3000);
     }
 
     private static void solveSixthStep() {
-        RooftopAgilityActions.LeapGap(14834);
+        ObstacleActions.HandleObstacle(14834, "leap");
         waitForPeriod(4000);
     }
 
     private static void solveSeventhStep() {
-        RooftopAgilityActions.LeapGap(14835);
+        ObstacleActions.HandleObstacle(14835, "leap");
         waitForPeriod(4000);
         MethodProvider.sleep(987, 3100);
     }
 
     private static void solveEighthStep() {
-        RooftopAgilityActions.HurdleLedge();
+        ObstacleActions.HandleObstacle("Ledge", "hurdle");
         waitForPeriod(4000);
     }
 
     private static void solveNinthStep() {
-        RooftopAgilityActions.JumpOffEdge();
+        ObstacleActions.HandleObstacle("Edge", "jump-off");
         waitForPeriod(4000);
     }
 
