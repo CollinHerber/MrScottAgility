@@ -63,10 +63,10 @@ public class RooftopAgilityActions {
         PreObstacleChecks(obj);
         if (obj != null) {
             if (obj.interact(interactOption)) {
-                sleepUntil(() -> Players.localPlayer().getTile() == obj.getTile(), 8000);
+                sleepUntil(() -> Players.localPlayer().getTile() == obj.getTile(), 6000);
             } else {
                 MethodProvider.sleep(250, 1000);
-                BalanceWall();
+                DoObstacle(obj, interactOption);
             }
         } else {
             log("No Obstacle Found. Failing!");
